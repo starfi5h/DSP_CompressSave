@@ -31,7 +31,7 @@ namespace DSP_Plugin
 
         static void Test()
         {
-            GameSave.ReadHeaderAndDesc("aa", true,out var header, out var desc);
+            GameSave.ReadHeaderAndDescAndProperty("aa", true, out var header, out var desc, out var property);
             if (header != null)
                 if (header is CompressionGameSaveHeader)
                     "b".Translate();
