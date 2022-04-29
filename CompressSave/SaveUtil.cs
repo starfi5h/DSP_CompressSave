@@ -17,7 +17,7 @@ namespace DSP_Plugin
         {
             Major = 0,
             Minor = 9,
-            Release = 24,
+            Release = 25,
         };
 
         public static string UnzipToFile(LZ4DecompressionStream lzStream, string fullPath)

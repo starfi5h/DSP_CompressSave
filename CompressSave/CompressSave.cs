@@ -14,7 +14,7 @@ namespace DSP_Plugin
     [BepInPlugin("com.bluedoom.plugin.Dyson.CompressSave", "CompressSave", VERSION)]
     public class CompressSave : BaseUnityPlugin
     {
-        public const string VERSION = "1.1.11";
+        public const string VERSION = "1.1.12";
 
         Harmony harmony;
         public void Awake()
