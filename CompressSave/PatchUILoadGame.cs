@@ -56,7 +56,7 @@ namespace DSP_Plugin
         }
 
         [HarmonyPatch(typeof(UILoadGameWindow), "_OnOpen"), HarmonyPostfix]
-        static void _OnOpen(UILoadGameWindow __instance, UIButton ___loadButton, List<UIGameSaveEntry> ___entries)
+        static void _OnOpen(UILoadGameWindow __instance, UIButton ___loadButton, GameObject ___loadSandboxGroup, List<UIGameSaveEntry> ___entries)
         {
             if (!decompressButton)
             {
@@ -64,6 +64,7 @@ namespace DSP_Plugin
 
                 decompressButton = (__instance.transform.Find("button-decompress")?.gameObject ?? GameObject.Instantiate(___loadButton.gameObject, ___loadButton.transform.parent)).GetComponent<UIButton>();
 
+                ___loadSandboxGroup.transform.Translate(new Vector3(-2.5f, 0, 0));
                 decompressButton.gameObject.name = "button-decompress";
                 decompressButton.transform.Translate(new Vector3(-2.0f, 0, 0));
                 decompressButton.button.image.color = new Color32(0, 0xf4, 0x92, 0x77);
